@@ -11,7 +11,7 @@ class Category:
         self.description = description
         self.products = products
         Category.category_quantity += 1
-        Category.products_quantity += len(products)
+        Category.products_quantity += len(products) if products else 0
 
 product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
 product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
