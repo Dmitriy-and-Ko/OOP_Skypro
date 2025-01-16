@@ -1,4 +1,5 @@
 from src.category import Category, product1, product3
+from src.product import Product
 from tests.conftest import first_category, first_product
 
 
@@ -23,3 +24,9 @@ def test_category_check_count_quantity(first_category, add_product_in_category):
     assert first_category.products_quantity == 9
     first_category.add_product(add_product_in_category)
     assert first_category.products_quantity == 10
+
+def test_product_new_product(third_product):
+    assert Product.new_product(third_product).name == "Samsung Galaxy S23 Ultra"
+    assert Product.new_product(third_product).description == "256GB, Серый цвет, 200MP камера"
+    assert Product.new_product(third_product).price == 180000.0
+    assert Product.new_product(third_product).quantity == 5

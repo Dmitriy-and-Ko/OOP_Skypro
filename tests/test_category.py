@@ -25,4 +25,5 @@ def test_category_init(first_category, second_category):
     assert first_category.products_quantity == 6
     assert second_category.products_quantity == 6
 
-
+# def test_getter_products(second_category, third_product):
+#     assert second_category.products == ''

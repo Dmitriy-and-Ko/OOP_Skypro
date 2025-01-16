@@ -46,3 +46,12 @@ def add_product_in_category():
         price=123000.0,
         quantity=7
     )
+
+@pytest.fixture()
+def third_product():
+    return {
+        'name': "Samsung Galaxy S23 Ultra",
+        'description': "256GB, Серый цвет, 200MP камера",
+        'price': 180000.0,
+        'quantity': 5
+        }
