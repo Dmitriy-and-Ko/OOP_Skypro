@@ -12,9 +12,20 @@ class Category:
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
-        self.products = products
+        self.__products = products
         Category.category_quantity += 1
         Category.products_quantity += len(products) if products else 0
+
+    def add_product(self, product_of_class):
+        self.__products.append(product_of_class)
+
+    @property
+    def products(self):
+        product_str = ""
+        for product in self.__products:
+            product_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+        return product_str
+
 
 
 product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
@@ -44,23 +55,24 @@ if __name__ == "__main__":
         [product1, product2, product3],
     )
 
-    print(category1.name == "Смартфоны")
-    print(category1.description)
-    print(len(category1.products))
-    print(category1.category_quantity)
-    print(category1.products_quantity)
-
-    product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
-    category2 = Category(
-        "Телевизоры",
-        "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
-        [product4],
-    )
-
-    print(category2.name)
-    print(category2.description)
-    print(len(category2.products))
-    print(category2.products)
-
-    print(Category.category_quantity)
-    print(Category.products_quantity)
+#
+#     print(category1.name == "Смартфоны")
+#     print(category1.description)
+#     print(len(category1.products))
+#     print(category1.category_quantity)
+#     print(category1.products_quantity)
+#
+#     product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
+#     category2 = Category(
+#         "Телевизоры",
+#         "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+#         [product4],
+#     )
+#
+#     print(category2.name)
+#     print(category2.description)
+#     print(len(category2.products))
+#     print(category2.products)
+#
+#     print(Category.category_quantity)
+#     print(Category.products_quantity)
