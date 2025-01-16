@@ -37,3 +37,12 @@ def second_category():
             'Карабин служебный самозарядный "Вепрь-12С Молот" (ВПО-205С) калибра 12/76',
         ],
     )
+
+@pytest.fixture()
+def add_product_in_category():
+    return Product(
+        name="55\" QLED 4K",
+        description="Фоновая подсветка",
+        price=123000.0,
+        quantity=7
+    )
