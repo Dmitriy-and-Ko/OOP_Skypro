@@ -16,7 +16,6 @@ class Category:
         Category.category_quantity += 1
         Category.products_quantity += len(products) if products else 0
 
-
     def add_product(self, product_of_class):
         self.products_quantity += 1
         self.__products.append(product_of_class)
@@ -25,13 +24,12 @@ class Category:
     def products(self):
         product_str = ""
         for product in self.__products:
-            product_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+            product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return product_str
 
     @property
     def products_in_list(self):
         return self.__products
-
 
 
 product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
@@ -46,18 +44,23 @@ if __name__ == "__main__":
     category1 = Category(
         "Смартфоны",
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
-        [product1, product2, product3]
+        [product1, product2, product3],
     )
 
     print(category1.products)
-    product4 = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
+    product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     category1.add_product(product4)
     print(category1.products)
     print(category1.products_quantity)
 
     new_product = Product.new_product(
-        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
-         "quantity": 5})
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "description": "256GB, Серый цвет, 200MP камера",
+            "price": 180000.0,
+            "quantity": 5,
+        }
+    )
     print(new_product.name)
     print(new_product.description)
     print(new_product.price)

@@ -1,6 +1,5 @@
-from src.category import Category, product1, product3
 from src.product import Product
-from tests.conftest import first_category, first_product
+from tests.conftest import first_product
 
 
 def test_product_init(first_product):
@@ -20,6 +19,17 @@ def test_product_new_product(third_product):
     assert Product.new_product(third_product).price == 180000.0
     assert Product.new_product(third_product).quantity == 5
 
+
 def test_product_price(first_product, second_product):
     assert first_product.price == 1700000
     assert second_product.price == 210000.0
+
+
+def test_product_price_setter(capsys, second_product):
+    new_price = -100
+    second_product.price = new_price
+    message = capsys.readouterr()
+    assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    new_price = 800
+    second_product.price = new_price
+    assert second_product.price == 800

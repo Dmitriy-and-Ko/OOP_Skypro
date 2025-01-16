@@ -12,10 +12,10 @@ class Product:
 
     @classmethod
     def new_product(cls, dict_of_product):
-        name = dict_of_product.get('name')
-        description = dict_of_product.get('description')
-        price = dict_of_product.get('price')
-        quantity = dict_of_product.get('quantity')
+        name = dict_of_product.get("name")
+        description = dict_of_product.get("description")
+        price = dict_of_product.get("price")
+        quantity = dict_of_product.get("quantity")
         return cls(name, description, price, quantity)
 
     @property
