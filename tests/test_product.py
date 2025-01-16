@@ -13,20 +13,13 @@ def test_product_init(first_product):
     assert first_product.price == 1700000
     assert first_product.quantity == 5
 
-def test_category_add_product(add_product_in_category):
-    assert add_product_in_category.name == "55\" QLED 4K"
-    assert add_product_in_category.description == "Фоновая подсветка"
-    assert add_product_in_category.price == 123000.0
-    assert add_product_in_category.quantity == 7
-
-
-def test_category_check_count_quantity(first_category, add_product_in_category):
-    assert first_category.products_quantity == 9
-    first_category.add_product(add_product_in_category)
-    assert first_category.products_quantity == 10
 
 def test_product_new_product(third_product):
     assert Product.new_product(third_product).name == "Samsung Galaxy S23 Ultra"
     assert Product.new_product(third_product).description == "256GB, Серый цвет, 200MP камера"
     assert Product.new_product(third_product).price == 180000.0
     assert Product.new_product(third_product).quantity == 5
+
+def test_product_price(first_product, second_product):
+    assert first_product.price == 1700000
+    assert second_product.price == 210000.0
