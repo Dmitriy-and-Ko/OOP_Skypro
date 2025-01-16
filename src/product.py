@@ -10,6 +10,14 @@ class Product:
         self.price = price
         self.quantity = quantity
 
+    @classmethod
+    def new_product(cls, dict_of_product):
+        name = dict_of_product.get('name')
+        description = dict_of_product.get('description')
+        price = dict_of_product.get('price')
+        quantity = dict_of_product.get('quantity')
+        return cls(name, description, price, quantity)
+
 
 if __name__ == "__main__":
     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
