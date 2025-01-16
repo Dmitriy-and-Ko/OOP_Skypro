@@ -1,3 +1,6 @@
+from tests.conftest import first_category
+
+
 def test_category_init(first_category, second_category):
     assert first_category.name == "автомобили"
     assert (
