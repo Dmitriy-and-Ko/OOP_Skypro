@@ -33,3 +33,11 @@ def test_product_price_setter(capsys, second_product):
     new_price = 800
     second_product.price = new_price
     assert second_product.price == 800
+
+
+def test_product_str(first_product):
+    assert str(first_product) == "hyundai i20, 1700000 руб. Остаток: 5 шт."
+
+
+def test_add_products(fist_product_for_add, second_product_for_add):
+    assert fist_product_for_add + second_product_for_add == 2541000

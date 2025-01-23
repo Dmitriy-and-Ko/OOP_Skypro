@@ -1,4 +1,4 @@
-from tests.conftest import first_category
+import pytest
 
 
 def test_category_init(first_category, second_category):
@@ -37,3 +37,14 @@ def test_category_check_count_quantity(first_category, add_product_in_category):
     assert first_category.products_quantity == 9
     first_category.add_product(add_product_in_category)
     assert first_category.products_quantity == 10
+
+
+def test_product_iterator(product_iterator):
+    iter(product_iterator)
+    assert product_iterator.index == 0
+    assert next(product_iterator) == 'Ружье служебное "Сайга-410СВ" калибра 410/76'
+    assert next(product_iterator) == 'Ружье служебное многозарядное "Бекас-12М" калибра 12/70'
+    assert next(product_iterator) == 'Карабин служебный самозарядный "Вепрь-12С Молот" (ВПО-205С) калибра 12/76'
+
+    with pytest.raises(StopIteration):
+        next(product_iterator)
