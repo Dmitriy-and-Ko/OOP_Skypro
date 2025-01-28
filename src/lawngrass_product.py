@@ -7,6 +7,14 @@ class LawnGrass(Product):
         self.germination_period = germination_period
         self.color = color
 
+    def __add__(self, other):
+        if type(other) is LawnGrass:
+            cost_product = self.quantity * self.price
+            cost_other = other.quantity * other.price
+            total_cost = cost_product + cost_other
+            return total_cost
+        raise TypeError
+
 if __name__ == '__main__':
     grass1 = LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
     grass2 = LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
