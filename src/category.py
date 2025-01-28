@@ -22,7 +22,7 @@ class Category:
             total_products += product.quantity
         return f"{self.name}, количество продуктов: {total_products} шт."
 
-    def add_product(self, product_of_class):
+    def add_product(self, product_of_class: Product):
         if isinstance(product_of_class, Product):
             self.products_quantity += 1
             self.__products.append(product_of_class)
