@@ -23,8 +23,11 @@ class Category:
         return f"{self.name}, количество продуктов: {total_products} шт."
 
     def add_product(self, product_of_class):
-        self.products_quantity += 1
-        self.__products.append(product_of_class)
+        if isinstance(product_of_class, Product):
+            self.products_quantity += 1
+            self.__products.append(product_of_class)
+        else:
+            raise TypeError
 
     @property
     def products(self):
