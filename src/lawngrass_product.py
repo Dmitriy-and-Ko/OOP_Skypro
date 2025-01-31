@@ -1,5 +1,6 @@
 from src.product import Product
 
+
 class LawnGrass(Product):
     def __init__(self, name, description, price, quantity, country, germination_period, color):
         super().__init__(name, description, price, quantity)
@@ -15,7 +16,8 @@ class LawnGrass(Product):
             return total_cost
         raise TypeError
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     grass1 = LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
     grass2 = LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
 

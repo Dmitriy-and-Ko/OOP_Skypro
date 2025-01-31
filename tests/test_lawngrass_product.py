@@ -1,5 +1,6 @@
 import pytest
 
+
 def test_lawngrass_product_init(product_lawngrass1):
     assert product_lawngrass1.name == "Газонная трава"
     assert product_lawngrass1.description == "Элитная трава для газона"
@@ -9,8 +10,10 @@ def test_lawngrass_product_init(product_lawngrass1):
     assert product_lawngrass1.germination_period == "7 дней"
     assert product_lawngrass1.color == "Зеленый"
 
+
 def test_lawngrass_product_add(product_lawngrass1, product_lawngrass2):
     assert product_lawngrass1 + product_lawngrass2 == 16750.0
+
 
 def test_lawngrass_product_add_error(product_lawngrass1):
     with pytest.raises(TypeError):
