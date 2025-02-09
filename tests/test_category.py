@@ -51,8 +51,7 @@ def test_product_iterator(product_iterator):
 
 
 def test_middle_price(category_without_products):
-    with pytest.raises(ZeroDivisionError):
-        assert category_without_products.middle_price() == 0
+    assert category_without_products.middle_price() == 0
 
 
 def test_len_first_category(first_category):
@@ -60,3 +59,7 @@ def test_len_first_category(first_category):
 
 def test_len_second_category(second_category):
     assert len(second_category.products_in_list) == 3
+
+
+def test_error_test_add_products():
+    pass

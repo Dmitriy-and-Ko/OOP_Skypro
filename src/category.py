@@ -43,10 +43,13 @@ class Category:
         return self.__products
 
     def middle_price(self):
-        try:
-            return sum([product.price for product in self.__products]) / len(self.__products)
-        except:
-            raise ZeroDivisionError
+        if len(self.__products) != 0:
+            try:
+                return sum([product.price for product in self.__products]) / len(self.__products)
+            except:
+                raise ZeroDivisionError
+                return 0
+        else:
             return 0
 
 
