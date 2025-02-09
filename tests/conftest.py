@@ -97,3 +97,12 @@ def product_lawngrass1():
 @pytest.fixture()
 def product_lawngrass2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
+
+
+@pytest.fixture()
+def category_without_products():
+    return Category(
+        name="боевое оружие",
+        description="Оружие войны",
+        products= []
+    )
