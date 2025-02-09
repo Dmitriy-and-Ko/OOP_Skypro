@@ -19,3 +19,8 @@ def test_smartphone_product_add(product_smartphone1, product_smartphone2):
 def test_smartphone_product_add_error(product_smartphone1):
     with pytest.raises(TypeError):
         result = product_smartphone1 + 1
+
+
+def test_error_smartphone_product_add(product_smartphone1, product_lawngrass1):
+    with pytest.raises(TypeError):
+        result = product_smartphone1 + product_lawngrass1

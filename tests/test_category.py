@@ -1,5 +1,7 @@
 import pytest
 
+from src.category import Category
+
 
 def test_category_init(first_category, second_category):
     assert first_category.name == "автомобили"
@@ -61,5 +63,6 @@ def test_len_second_category(second_category):
     assert len(second_category.products_in_list) == 3
 
 
-def test_error_test_add_products():
-    pass
+def test_error_test_add_products(first_category):
+    with pytest.raises(TypeError):
+        assert Category.add_product(first_category)
